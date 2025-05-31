@@ -10,8 +10,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        headline: ['Playfair Display', 'serif'],
+        body: ['Belleza', 'sans-serif'],
+        sans: ['PT Sans', 'sans-serif'], // Added PT Sans as general sans-serif fallback / for longer texts
         code: ['monospace'],
       },
       colors: {
@@ -88,10 +89,20 @@ export default {
             height: '0',
           },
         },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        'slide-up-fade-in': {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        marquee: 'marquee 30s linear infinite',
+        'slide-up-fade-in': 'slide-up-fade-in 0.8s ease-out forwards',
       },
     },
   },
