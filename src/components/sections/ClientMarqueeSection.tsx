@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 const clients = [
-  { name: "Saif's Valued Client", logo: "https://firebasestudio.googleapis.com/v0/b/builder-521d8.appspot.com/o/tmp%2FUXgQ9p8U9l%2Fimage.png?alt=media&token=922e486c-028e-4a76-93d2-6d9174c47a52", hint: "client portrait", isProvided: true },
+  { name: "Saif's Valued Client", logo: "https://firebasestudio.googleapis.com/v0/b/builder-521d8.appspot.com/o/tmp%2FUO4V7631F8%2Fimage.png?alt=media&token=3e0e050a-b51a-4115-a4b8-233f4304a31f", hint: "client portrait", isProvided: true },
   { name: "E-commerce Innovator", logo: "https://placehold.co/150x80.png", hint: "online shop" },
   { name: "SaaS Solution Provider", logo: "https://placehold.co/150x80.png", hint: "software dashboard" },
   { name: "Local Business Champion", logo: "https://placehold.co/150x80.png", hint: "store map" },
