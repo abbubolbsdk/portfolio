@@ -9,7 +9,6 @@ import ContactSection from '@/components/sections/ContactSection';
 import MethodSection from '@/components/sections/MethodSection'; // Now "My Development Process"
 import AboutSection from '@/components/sections/AboutSection'; // Now "About Me"
 import WorkSection from '@/components/sections/WorkSection'; // Now "My Portfolio"
-import SpinningDemoSection from '@/components/sections/SpinningDemoSection'; // Added new section
 
 export default function HomePage() {
   return (
@@ -17,14 +16,13 @@ export default function HomePage() {
       <HeroSection />
       <ClientMarqueeSection />
       <ServicesSection />
-      <MethodSection /> 
-      <WorkSection /> 
-      <SpinningDemoSection /> {/* Added new section */}
-      <InteractiveTabsSection /> 
+      <MethodSection />
+      <WorkSection />
+      <InteractiveTabsSection />
       <BrandToolSection />
       <StatsSection />
       <TestimonialsSection />
-      <AboutSection /> 
+      <AboutSection />
       <ContactSection />
     </>
   );
