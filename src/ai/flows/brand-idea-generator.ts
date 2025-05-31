@@ -1,23 +1,23 @@
 'use server';
 
 /**
- * @fileOverview Generates 'Ideas Worth Rallying Around' based on a company description.
+ * @fileOverview Generates web project ideas or taglines based on a company/project description.
  *
- * - generateBrandIdeas - A function that generates brand ideas.
- * - BrandIdeaInput - The input type for the generateBrandIdeas function.
- * - BrandIdeaOutput - The return type for the generateBrandIdeas function.
+ * - generateBrandIdeas - A function that generates web project ideas/taglines.
+ * - BrandIdeaInput - The input type for the generateBrandIdeas function. (Kept name for simplicity for now)
+ * - BrandIdeaOutput - The return type for the generateBrandIdeas function. (Kept name for simplicity for now)
  */
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 
 const BrandIdeaInputSchema = z.object({
-  companyDescription: z.string().describe('A brief description of the company or project.'),
+  companyDescription: z.string().describe('A brief description of the company or project needing web ideas.'),
 });
 export type BrandIdeaInput = z.infer<typeof BrandIdeaInputSchema>;
 
 const BrandIdeaOutputSchema = z.object({
-  ideas: z.array(z.string()).describe('A list of AI-generated ideas worth rallying around.'),
+  ideas: z.array(z.string()).describe('A list of AI-generated web project ideas or taglines.'),
 });
 export type BrandIdeaOutput = z.infer<typeof BrandIdeaOutputSchema>;
 
@@ -26,15 +26,22 @@ export async function generateBrandIdeas(input: BrandIdeaInput): Promise<BrandId
 }
 
 const prompt = ai.definePrompt({
-  name: 'brandIdeaGeneratorPrompt',
+  name: 'webProjectIdeaGeneratorPrompt', // Renamed prompt
   input: {schema: BrandIdeaInputSchema},
   output: {schema: BrandIdeaOutputSchema},
-  prompt: `You are a branding expert. Generate a list of "Ideas Worth Rallying Around" for the following company description:\n\n{{companyDescription}}\n\nIdeas:`,
+  prompt: `You are a creative web development consultant and marketing expert. 
+Generate a list of 3-5 concise and compelling web project ideas, unique selling propositions (USPs), or taglines for the following company/project description.
+Focus on aspects that would make a website stand out.
+
+Company/Project Description:
+{{companyDescription}}
+
+Generated Ideas/Taglines:`,
 });
 
 const brandIdeaGeneratorFlow = ai.defineFlow(
   {
-    name: 'brandIdeaGeneratorFlow',
+    name: 'brandIdeaGeneratorFlow', // Flow name can remain for now to avoid breaking changes elsewhere if not necessary
     inputSchema: BrandIdeaInputSchema,
     outputSchema: BrandIdeaOutputSchema,
   },

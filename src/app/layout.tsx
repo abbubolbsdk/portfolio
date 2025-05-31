@@ -6,8 +6,8 @@ import SiteHeader from '@/components/layout/SiteHeader';
 import SiteFooter from '@/components/layout/SiteFooter';
 
 export const metadata: Metadata = {
-  title: 'Rally Point | Ideas Worth Rallying Around',
-  description: 'Rally Point is a strategic branding agency specializing in creating Ideas Worth Rallying Around® for innovative tech companies.',
+  title: 'Saif Khan | Expert Web Development Services',
+  description: 'Saif Khan offers professional web development services, creating stunning and high-performing websites tailored to your needs.',
 };
 
 export default function RootLayout({

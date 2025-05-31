@@ -3,8 +3,7 @@
 import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Linkedin, Instagram, Youtube, ArrowRight } from 'lucide-react';
-import FlagIcon from '@/components/icons/FlagIcon';
+import { Linkedin, Instagram, Github, ArrowRight, Mail, Phone, Code } from 'lucide-react'; // Added Github, Mail, Phone, Code
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -31,45 +30,34 @@ export default function SiteFooter() {
     reset();
   };
 
-  const companyLinks = [
+  const siteLinks = [
     { href: "/", label: "Home" },
-    { href: "/#services", label: "What We Do" },
-    { href: "/#about", label: "About" },
-    { href: "/#method", label: "Method" },
-    { href: "/#work", label: "Work" },
+    { href: "/#services", label: "Services" },
+    { href: "/#work", label: "Portfolio" },
+    { href: "/#about", label: "About Me" },
     { href: "/#contact", label: "Contact" },
   ];
 
-  const discoverLinks = [
-    { href: "/#engagements", label: "Engagements" },
-    { href: "/#speaking", label: "Speaking" },
-    { href: "/#book", label: "Our Book" },
-    { href: "/#shop", label: "Shop" },
+  const connectLinks = [
+    { href: "mailto:123saifkhansk@gmail.com", label: "123saifkhansk@gmail.com", icon: Mail },
+    { href: "tel:+919152671865", label: "+91 91526 71865", icon: Phone },
   ];
 
-  const learnLinks = [
-    { href: "/#blog", label: "Blog" },
-    { href: "/#press", label: "Press & Media" },
-    { href: "/#clients", label: "Clients" },
-    { href: "/#testimonials", label: "Testimonials" },
-    { href: "/#faq", label: "FAQs" },
-  ];
 
   const socialLinks = [
-    { href: "https://linkedin.com", icon: Linkedin, label: "LinkedIn" },
-    { href: "https://instagram.com", icon: Instagram, label: "Instagram" },
-    { href: "https://youtube.com", icon: Youtube, label: "YouTube" },
+    { href: "https://linkedin.com/in/yourprofile", icon: Linkedin, label: "LinkedIn" }, // Replace with actual link
+    { href: "https://github.com/yourprofile", icon: Github, label: "GitHub" }, // Replace with actual link
+    { href: "https://instagram.com/yourprofile", icon: Instagram, label: "Instagram" }, // Replace with actual link
   ];
 
   return (
     <footer className="bg-primary text-primary-foreground py-12 md:py-20">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
-          {/* Newsletter Signup */}
           <div className="md:col-span-5">
-            <h3 className="text-xl font-headline mb-2">Stay Rallied</h3>
+            <h3 className="text-xl font-headline mb-2">Stay Updated</h3>
             <p className="text-sm text-primary-foreground/80 mb-4">
-              Get valuable strategy, culture, and brand insights straight to your inbox.
+              Get insights on web development trends and project updates.
             </p>
             <form onSubmit={handleSubmit(onSubmit)} className="flex gap-2 items-start">
               <div className="flex-grow">
@@ -90,12 +78,11 @@ export default function SiteFooter() {
             </p>
           </div>
 
-          {/* Links Grid */}
           <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
             <div>
-              <h4 className="font-semibold font-headline mb-3">Company</h4>
+              <h4 className="font-semibold font-headline mb-3">Site Map</h4>
               <ul className="space-y-2">
-                {companyLinks.map((link) => (
+                {siteLinks.map((link) => (
                   <li key={link.label}>
                     <Link href={link.href} className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
                       {link.label}
@@ -105,24 +92,27 @@ export default function SiteFooter() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold font-headline mb-3">Discover</h4>
+              <h4 className="font-semibold font-headline mb-3">Connect</h4>
               <ul className="space-y-2">
-                {discoverLinks.map((link) => (
+                {connectLinks.map((link) => (
                   <li key={link.label}>
-                    <Link href={link.href} className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+                    <a href={link.href} className="text-sm text-primary-foreground/80 hover:text-accent transition-colors flex items-center">
+                       {link.icon && <link.icon className="h-4 w-4 mr-2" />}
                       {link.label}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
             </div>
-            <div>
-              <h4 className="font-semibold font-headline mb-3">Learn</h4>
+             <div>
+              <h4 className="font-semibold font-headline mb-3">Socials</h4>
               <ul className="space-y-2">
-                {learnLinks.map((link) => (
-                  <li key={link.label}>
-                    <Link href={link.href} className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
-                      {link.label}
+                {socialLinks.map((social) => (
+                  <li key={social.label}>
+                    <Link href={social.href} target="_blank" rel="noopener noreferrer"
+                      className="text-sm text-primary-foreground/80 hover:text-accent transition-colors flex items-center">
+                       <social.icon className="h-4 w-4 mr-2" />
+                      {social.label}
                     </Link>
                   </li>
                 ))}
@@ -135,8 +125,8 @@ export default function SiteFooter() {
 
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="flex items-center space-x-2">
-            <FlagIcon className="h-5 w-5 text-accent" />
-            <span className="text-sm font-medium">Rally Point © {new Date().getFullYear()}</span>
+            <Code className="h-5 w-5 text-accent" /> {/* Changed Icon */}
+            <span className="text-sm font-medium">Saif Khan © {new Date().getFullYear()}</span>
           </div>
           <div className="flex space-x-4">
             {socialLinks.map((social) => (

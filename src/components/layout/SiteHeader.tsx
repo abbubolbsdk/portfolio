@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Code } from 'lucide-react'; // Replaced FlagIcon with Code
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import {
@@ -10,25 +10,24 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import FlagIcon from '@/components/icons/FlagIcon';
 import React from 'react';
 
 const navLinks = [
   { href: "/#services", label: "Services" },
-  { href: "/#work", label: "Work" },
-  { href: "/#method", label: "Method" },
+  { href: "/#work", label: "Portfolio" }, // Changed "Work" to "Portfolio"
+  { href: "/#method", label: "Process" }, // Changed "Method" to "Process"
   { 
-    label: "Learn", 
+    label: "Resources",  // Changed "Learn" to "Resources"
     isDropdown: true,
     dropdownItems: [
-      { href: "/#blog", label: "Blog" },
-      { href: "/#press", label: "Press" },
-      { href: "/#book", label: "Our Book" },
-      { href: "/#speaking", label: "Speaking" },
+      { href: "/#blog", label: "Blog" }, // Kept blog
+      // { href: "/#press", label: "Press" }, // Removed Press, less relevant for individual
+      // { href: "/#book", label: "Our Book" }, // Removed Book
+      // { href: "/#speaking", label: "Speaking" }, // Removed Speaking
     ]
   },
-  { href: "/#about", label: "About" },
-  { href: "/#clients", label: "Clients" },
+  { href: "/#about", label: "About Me" }, // Changed "About" to "About Me"
+  { href: "/#testimonials", label: "Testimonials" }, // Changed "Clients" to "Testimonials"
 ];
 
 export default function SiteHeader() {
@@ -38,8 +37,8 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <FlagIcon className="h-6 w-6 text-primary" />
-          <span className="font-bold font-headline text-xl text-primary">Rally Point</span>
+          <Code className="h-6 w-6 text-primary" /> {/* Changed Icon */}
+          <span className="font-bold font-headline text-xl text-primary">Saif Khan</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -87,8 +86,8 @@ export default function SiteHeader() {
             <SheetContent side="right" className="w-full max-w-xs bg-background p-6">
               <div className="flex justify-between items-center mb-6">
                 <Link href="/" className="flex items-center space-x-2" onClick={() => setIsMobileMenuOpen(false)}>
-                  <FlagIcon className="h-6 w-6 text-primary" />
-                  <span className="font-bold font-headline text-xl text-primary">Rally Point</span>
+                  <Code className="h-6 w-6 text-primary" /> {/* Changed Icon */}
+                  <span className="font-bold font-headline text-xl text-primary">Saif Khan</span>
                 </Link>
                 <SheetClose asChild>
                    <Button variant="ghost" size="icon">

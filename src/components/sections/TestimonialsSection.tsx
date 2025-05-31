@@ -8,21 +8,21 @@ import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
 const testimonials = [
   {
     id: 1,
-    quote: "Rally Point transformed our brand and helped us connect with our audience on a whole new level. Their insights were invaluable.",
-    author: "Jane Doe",
-    company: "CEO, TechForward Inc."
+    quote: "Saif Khan delivered an exceptional website that perfectly captured our brand and significantly boosted our online engagement. His technical skills and creative vision are top-notch!",
+    author: "Aisha R.",
+    company: "Owner, The Cozy Corner Cafe"
   },
   {
     id: 2,
-    quote: "The team at Rally Point is exceptional. They truly understand how to build Ideas Worth Rallying Around®.",
-    author: "John Smith",
-    company: "Founder, Innovate Solutions"
+    quote: "Working with Saif was a fantastic experience. He is professional, responsive, and truly understood our complex requirements for our e-commerce platform. Highly recommended!",
+    author: "Ben C.",
+    company: "CTO, Innovatech Solutions"
   },
   {
     id: 3,
-    quote: "Working with Rally Point was a game-changer for our market positioning. Highly recommend!",
-    author: "Alice Brown",
-    company: "CMO, FutureGadgets Co."
+    quote: "Saif transformed our outdated website into a modern, fast, and user-friendly platform. We've seen a noticeable increase in conversions since the launch. Thank you, Saif!",
+    author: "Priya S.",
+    company: "Marketing Director, Global Exports Ltd."
   },
 ];
 
@@ -43,8 +43,8 @@ export default function TestimonialsSection() {
     <section id="testimonials" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">What Our Clients Say</h2>
-          <p className="text-muted-foreground mt-2">Real stories from leaders we've helped rally.</p>
+          <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">What My Clients Say</h2>
+          <p className="text-muted-foreground mt-2">Real stories from businesses I've helped succeed online.</p>
         </div>
         
         <div className="relative max-w-2xl mx-auto">
